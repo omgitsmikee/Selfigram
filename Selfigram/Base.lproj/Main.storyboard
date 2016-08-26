@@ -19,10 +19,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="pj3-yy-gYH"/>
+                    <navigationItem key="navigationItem" id="vLe-dt-aWQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnZ-ky-T49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="1008"/>
+            <point key="canvasLocation" x="1067" y="1108"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="XtS-pW-z11">
@@ -100,12 +101,30 @@
                     <connections>
                         <segue destination="bJZ-Ax-wt9" kind="relationship" relationship="viewControllers" id="CdN-8j-L3O"/>
                         <segue destination="fxZ-0U-tb3" kind="relationship" relationship="viewControllers" id="8NT-dg-o7n"/>
-                        <segue destination="xrT-fL-1g8" kind="relationship" relationship="viewControllers" id="z4G-dV-EPC"/>
+                        <segue destination="XPh-Ss-9ZF" kind="relationship" relationship="viewControllers" id="UKU-91-Rnt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmk-Re-Yac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-566" y="419"/>
+        </scene>
+        <!--Activities-->
+        <scene sceneID="2my-nD-U9S">
+            <objects>
+                <navigationController id="XPh-Ss-9ZF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activities" id="Y4g-He-Jtz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mbg-3x-SSh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.65785211179490144" green="0.73201371242898139" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xrT-fL-1g8" kind="relationship" relationship="rootViewController" id="uxE-06-dvV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcE-qG-Rey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="1108"/>
         </scene>
         <!--News Feed-->
         <scene sceneID="jfc-hX-euB">
@@ -116,7 +135,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iMe-Qc-CVZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.9882352941176471" green="0.98690215202886" blue="0.24839633518318674" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.9882352941176471" green="0.40480360195115556" blue="0.17727383917206199" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
