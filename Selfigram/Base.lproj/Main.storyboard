@@ -8,7 +8,7 @@
         <!--Profile-->
         <scene sceneID="ARV-Jg-WJy">
             <objects>
-                <viewController id="xrT-fL-1g8" sceneMemberID="viewController">
+                <viewController id="xrT-fL-1g8" userLabel="Profile" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aBj-w2-s1P"/>
                         <viewControllerLayoutGuide type="bottom" id="BYx-XG-74i"/>
@@ -110,7 +110,7 @@
         <!--News Feed-->
         <scene sceneID="jfc-hX-euB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bJZ-Ax-wt9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bJZ-Ax-wt9" userLabel="News Feed" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News Feed" image="NewsFeed" id="Bb4-xY-Bhe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iMe-Qc-CVZ">
@@ -130,7 +130,7 @@
         <!--Activities-->
         <scene sceneID="qbp-3g-Er7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxZ-0U-tb3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxZ-0U-tb3" userLabel="Activities" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activities" image="Activities" id="sFF-v8-4kw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="peU-Al-wl9">
