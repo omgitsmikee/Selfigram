@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1C0C6A1D78FECF0024A67E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C0C691D78FECF0024A67E /* User.swift */; };
 		6D94234C1D7650AC00DC039B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D94234B1D7650AC00DC039B /* ProfileViewController.swift */; };
 		6DCDB2761D6FBA9300738E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDB2751D6FBA9300738E25 /* AppDelegate.swift */; };
 		6DCDB2781D6FBA9300738E25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDB2771D6FBA9300738E25 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D1C0C691D78FECF0024A67E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Selfigram/User.swift; sourceTree = "<group>"; };
 		6D94234B1D7650AC00DC039B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6DCDB2721D6FBA9300738E25 /* Selfigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCDB2751D6FBA9300738E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		6DCDB2691D6FBA9300738E25 = {
 			isa = PBXGroup;
 			children = (
+				6D1C0C691D78FECF0024A67E /* User.swift */,
 				6DCDB2741D6FBA9300738E25 /* Selfigram */,
 				6DCDB2891D6FBA9300738E25 /* SelfigramTests */,
 				6DCDB2941D6FBA9300738E25 /* SelfigramUITests */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1C0C6A1D78FECF0024A67E /* User.swift in Sources */,
 				6D94234C1D7650AC00DC039B /* ProfileViewController.swift in Sources */,
 				6DCDB2781D6FBA9300738E25 /* ViewController.swift in Sources */,
 				6DCDB2761D6FBA9300738E25 /* AppDelegate.swift in Sources */,
