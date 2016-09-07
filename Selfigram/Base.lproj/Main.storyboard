@@ -69,16 +69,16 @@
             </objects>
             <point key="canvasLocation" x="1067" y="1108"/>
         </scene>
-        <!--Table View Controller-->
+        <!--News Feed Table View Controller-->
         <scene sceneID="XtS-pW-z11">
             <objects>
-                <tableViewController id="5rq-nw-4Hn" sceneMemberID="viewController">
+                <tableViewController id="5rq-nw-4Hn" userLabel="News Feed Table View Controller" customClass="FeedViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nhy-OJ-eca">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Naw-Ie-KqH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" id="Naw-Ie-KqH">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Naw-Ie-KqH" id="NOv-KA-jtf">
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="1067" y="-389"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Activities Table View Controller-->
         <scene sceneID="tdR-Pb-xHQ">
             <objects>
-                <tableViewController id="3lH-hW-2ZC" sceneMemberID="viewController">
+                <tableViewController id="3lH-hW-2ZC" userLabel="Activities Table View Controller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aRQ-bF-YmJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
