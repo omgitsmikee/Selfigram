@@ -10,8 +10,8 @@ import UIKit
 
 class FeedViewController: UITableViewController {
 
-    var words: [String] = ["Hello", "my", "name", "is", "Selfigram"]
-    
+    var words = ["Hello", "my", "name", "is", "Selfigram"]
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class FeedViewController: UITableViewController {
         let post3 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 3")
         let post4 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 4")
         
-        var posts = [post0, post1, post2, post3, post4]
+        posts = [post0, post1, post2, post3, post4]
         
     }
 
@@ -51,7 +51,6 @@ class FeedViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath)
         
-//        cell.textLabel?.text = words[indexPath.row]
         let post = posts[indexPath.row]
         cell.imageView?.image = post.image
         cell.textLabel?.text = post.comment
