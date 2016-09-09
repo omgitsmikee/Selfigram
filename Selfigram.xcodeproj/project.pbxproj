@@ -18,6 +18,7 @@
 		6DCDB2801D6FBA9300738E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDB27E1D6FBA9300738E25 /* LaunchScreen.storyboard */; };
 		6DCDB28B1D6FBA9300738E25 /* SelfigramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDB28A1D6FBA9300738E25 /* SelfigramTests.swift */; };
 		6DCDB2961D6FBA9300738E25 /* SelfigramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDB2951D6FBA9300738E25 /* SelfigramUITests.swift */; };
+		90D6810F1D822E69006607A8 /* SelfieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6810E1D822E69006607A8 /* SelfieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		6DCDB2911D6FBA9300738E25 /* SelfigramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfigramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCDB2951D6FBA9300738E25 /* SelfigramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfigramUITests.swift; sourceTree = "<group>"; };
 		6DCDB2971D6FBA9300738E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90D6810E1D822E69006607A8 /* SelfieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				6D26D9221D7F99080025D8E1 /* FeedViewController.swift */,
+				90D6810E1D822E69006607A8 /* SelfieCell.swift */,
 				6D1C0C691D78FECF0024A67E /* User.swift */,
 				6D1C0C6B1D7900CC0024A67E /* Post.swift */,
 				6DCDB2751D6FBA9300738E25 /* AppDelegate.swift */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D6810F1D822E69006607A8 /* SelfieCell.swift in Sources */,
 				6D1C0C6A1D78FECF0024A67E /* User.swift in Sources */,
 				6D94234C1D7650AC00DC039B /* ProfileViewController.swift in Sources */,
 				6DCDB2781D6FBA9300738E25 /* ViewController.swift in Sources */,
