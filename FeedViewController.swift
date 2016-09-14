@@ -13,6 +13,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
     var words = ["Hello", "my", "name", "is", "Selfigram"]
     var posts = [Post]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +22,61 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         // Our definition of Post did not include the possibility of a nil UIImage
         // so, therefore we have to add a ! at the end of it
 
-        let me = User(username: "danny", profileImage: UIImage(named: "Grumpy-Cat")!)
-        let post0 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 0")
-        let post1 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 1")
-        let post2 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 2")
-        let post3 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 3")
-        let post4 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 4")
+//        let me = User(username: "danny", profileImage: UIImage(named: "Grumpy-Cat")!)
+//        let post0 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 0")
+//        let post1 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 1")
+//        let post2 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 2")
+//        let post3 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 3")
+//        let post4 = Post(image: UIImage(named: "Grumpy-Cat")!, user: me, comment: "Grumpy Cat 4")
+//        posts = [post0, post1, post2, post3, post4]
+
         
-        posts = [post0, post1, post2, post3, post4]
+        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=ca73cf98d3cde9ce3b8dbbb5af252af5&tags=cat")!) { (data, response, error) -> Void in
+            
+            // convert NSData to JSON
+            if let jsonUnformatted = try? NSJSONSerialization.JSONObjectWithData(data!, options: []),
+                let json = jsonUnformatted as? [String : AnyObject],
+                let photosDictionary = json["photos"] as? [String : AnyObject],
+                let photosArray = photosDictionary["photo"] as? [[String : AnyObject]]
+                {
+                    
+                    for photo in photosArray {
+                        
+                        if let farmID = photo["farm"] as? Int,
+                            let serverID = photo["server"] as? String,
+                            let photoID = photo["id"] as? String,
+                            let secret = photo["secret"] as? String {
+                                let photoURLString = "https://farm\(farmID).staticflickr.com/\(serverID)/\(photoID)_\(secret).jpg"
+                                print("\n\(photoURLString)\n")
+                                if let photoURL = NSURL(string: photoURLString) {
+                                    let me = User(username: "danny", profileImage: UIImage(named: "Grumpy-Cat")!)
+                                    let post = Post(imageURL: photoURL, user: me, comment: "A Flickr Selfie")
+                                    self.posts.append(post)
+                                }
+                            
+                            }
+                        
+                    }
+                    
+                    
+                    // We use dispatch_async because we need update all UI elements on the main thread.
+                    // This is a rule and you will see this again whenever you are updating UI.
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.tableView.reloadData()
+                    })
+                    
+                }
+//                
+            else{
+                print("error with response data")
+            }
+            
+        }
+        
+        
+        task.resume()
+        
+        
         
     }
 
@@ -44,7 +92,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.posts.count
     }
 
 
@@ -52,7 +100,32 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! SelfieCell
         
         let post = self.posts[indexPath.row]
-        cell.selfieImageView.image = post.image
+        
+        // I've added this line to prevent flickering of images
+        // We are inside the cellForRowAtIndexPath method that gets called everything we layout a cell
+        // Because we are reusing "postCell" cells, a reused cell might have an image already set on it.
+        // This always resets the image to blank, waits for the image to download, and then sets it
+        cell.selfieImageView.image = nil
+        
+        //Check for imageURL nullity before invoking.
+        
+        if let imageURL = post.imageURL {
+            let task = NSURLSession.sharedSession().downloadTaskWithURL(post.imageURL!) { (url, response, error) -> Void in
+                if let imageURL = url,
+                    let imageData = NSData(contentsOfURL: imageURL) {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        cell.selfieImageView.image = UIImage(data: imageData)
+                    })
+                }
+                
+            }
+            
+            task.resume()
+        } else if let image = post.image {
+            cell.selfieImageView.image = image
+        }
+            
+
         cell.usernameLabel.text = post.user.username
         cell.commentLabel.text = post.comment
         

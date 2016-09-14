@@ -10,13 +10,23 @@ import Foundation
 import UIKit
 
 class Post {
-    let image: UIImage
+    var image: UIImage?
+    let imageURL: NSURL?
     let user: User
     let comment: String
     
-    init (image: UIImage, user: User, comment: String) {
-        self.image = image
+    init (imageURL:NSURL?, user: User, comment: String) {
+        self.imageURL = imageURL
         self.user = user
         self.comment = comment
     }
+    
+    convenience init(image:UIImage?, user: User, comment: String ) {
+        
+        self.init(imageURL: nil, user: user, comment: comment)
+        self.image = image
+        
+    }
+    
+    
 }
