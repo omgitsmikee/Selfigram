@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Initialize Parse.
+        // Replace XXXX with the App ID and Client ID that Parse gives you
+        Parse.setApplicationId("0S7t0laoe3TDIYxZgiTZ10JvZYs3YTr6leARYMRl",
+                               clientKey: "MHtYqAJVoMDBrDo89hKTgNnPleJhNtQwv5eCsbxR")
+
+        let user = PFUser()
+        let username = "danny"
+        let password = "mathews"
+        user.username = username
+        user.password = password
+        user.signUpInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                print("successfully signuped a user")
+            }
+            else {
+                PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
+                    if let user = user {
+                        print("successfully logged in \(user)")
+                    }
+                })
+            }
+        }
+        
         return true
+    
     }
 
     func applicationWillResignActive(application: UIApplication) {
