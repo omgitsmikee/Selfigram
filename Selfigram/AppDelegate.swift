@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize Parse.
         // Replace XXXX with the App ID and Client ID that Parse gives you
+        Post.registerSubclass()
         Parse.setApplicationId("0S7t0laoe3TDIYxZgiTZ10JvZYs3YTr6leARYMRl",
                                clientKey: "MHtYqAJVoMDBrDo89hKTgNnPleJhNtQwv5eCsbxR")
 
