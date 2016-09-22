@@ -112,9 +112,23 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMF-wr-5hh">
+                                            <rect key="frame" x="550" y="207" width="42" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="23" id="pzn-cV-lqi"/>
+                                                <constraint firstAttribute="height" constant="20" id="uau-Hu-sIe"/>
+                                            </constraints>
+                                            <state key="normal" image="hearts-off"/>
+                                            <state key="selected" image="hearts-on"/>
+                                            <connections>
+                                                <action selector="likeButtonClicked:" destination="Naw-Ie-KqH" eventType="touchUpInside" id="Kec-nX-p7d"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="0cg-p2-QMl"/>
+                                        <constraint firstItem="fMF-wr-5hh" firstAttribute="trailing" secondItem="NOv-KA-jtf" secondAttribute="trailingMargin" constant="8" id="46Q-MS-zyu"/>
+                                        <constraint firstItem="fMF-wr-5hh" firstAttribute="top" secondItem="Fg1-2L-8ok" secondAttribute="bottom" constant="8" id="4Mf-0Q-Vb8"/>
                                         <constraint firstItem="nfp-lH-ooZ" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="9Rk-xr-KuZ"/>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="top" secondItem="nfp-lH-ooZ" secondAttribute="bottom" constant="8" id="Es5-XO-0Tb"/>
                                         <constraint firstItem="Fg1-2L-8ok" firstAttribute="top" secondItem="NOv-KA-jtf" secondAttribute="topMargin" id="K4c-Df-wPS"/>
@@ -260,6 +274,8 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
+        <image name="hearts-on" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>
