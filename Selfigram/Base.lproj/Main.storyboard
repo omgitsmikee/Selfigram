@@ -86,8 +86,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-2L-8ok">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-2L-8ok">
+                                            <rect key="frame" x="8" y="8" width="584" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="250" id="NA5-9c-P4S"/>
                                             </constraints>
@@ -112,11 +112,11 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMF-wr-5hh">
-                                            <rect key="frame" x="550" y="207" width="42" height="37"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMF-wr-5hh">
+                                            <rect key="frame" x="569" y="266" width="23" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="23" id="pzn-cV-lqi"/>
-                                                <constraint firstAttribute="height" constant="20" id="uau-Hu-sIe"/>
+                                                <constraint firstAttribute="width" constant="23" id="0el-Bf-nvk"/>
+                                                <constraint firstAttribute="height" constant="20" id="oP0-jA-C8E"/>
                                             </constraints>
                                             <state key="normal" image="hearts-off"/>
                                             <state key="selected" image="hearts-on"/>
@@ -127,9 +127,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="0cg-p2-QMl"/>
-                                        <constraint firstItem="fMF-wr-5hh" firstAttribute="trailing" secondItem="NOv-KA-jtf" secondAttribute="trailingMargin" constant="8" id="46Q-MS-zyu"/>
-                                        <constraint firstItem="fMF-wr-5hh" firstAttribute="top" secondItem="Fg1-2L-8ok" secondAttribute="bottom" constant="8" id="4Mf-0Q-Vb8"/>
+                                        <constraint firstItem="fMF-wr-5hh" firstAttribute="top" secondItem="Fg1-2L-8ok" secondAttribute="bottom" constant="8" id="61R-UJ-l3o"/>
                                         <constraint firstItem="nfp-lH-ooZ" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="9Rk-xr-KuZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="fMF-wr-5hh" secondAttribute="trailing" constant="8" id="9m5-rB-ELt"/>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="top" secondItem="nfp-lH-ooZ" secondAttribute="bottom" constant="8" id="Es5-XO-0Tb"/>
                                         <constraint firstItem="Fg1-2L-8ok" firstAttribute="top" secondItem="NOv-KA-jtf" secondAttribute="topMargin" id="K4c-Df-wPS"/>
                                         <constraint firstItem="Fg1-2L-8ok" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="fed-4U-xJz"/>
@@ -139,6 +139,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="Nnr-LH-qUo" id="ALC-cL-9lU"/>
+                                    <outlet property="likeButton" destination="fMF-wr-5hh" id="wX1-D1-dqq"/>
                                     <outlet property="selfieImageView" destination="Fg1-2L-8ok" id="gac-gY-CQp"/>
                                     <outlet property="usernameLabel" destination="nfp-lH-ooZ" id="t3x-PW-DsY"/>
                                 </connections>

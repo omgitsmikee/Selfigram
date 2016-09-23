@@ -16,7 +16,14 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var image:PFFile
     @NSManaged var user:PFUser
     @NSManaged var comment:String
-    
+
+    var likes: PFRelation! {
+        // PFRelations are a bit different from just a regular properties
+        // This is called a “computed property”, because it’s value is computed every time instead of stored.
+        // The line below specifies that our relation column on Parse.com should be called “likes”
+        return relationForKey("likes")
+    }
+
     
     static func parseClassName() -> String {
         // sets what the table name on Parse will be called
