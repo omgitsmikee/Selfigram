@@ -158,10 +158,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="b7P-ml-TQt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshPulled:" destination="5rq-nw-4Hn" eventType="valueChanged" id="qiK-EF-xgy"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59Q-Np-dvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="-253"/>
+            <point key="canvasLocation" x="1067" y="-389"/>
         </scene>
         <!--Activities Table View Controller-->
         <scene sceneID="tdR-Pb-xHQ">
