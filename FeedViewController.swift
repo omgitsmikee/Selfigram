@@ -35,6 +35,25 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         
     }
     
+    
+    @IBAction func doubleTappedSelfie(sender: UITapGestureRecognizer) {
+
+        // get the location (x,y) position on our tableView where we have clicked
+        let tapLocation = sender.locationInView(tableView)
+        
+        // based on the x, y position we can get the indexPath for where we are at
+        if let indexPathAtTapLocation = tableView.indexPathForRowAtPoint(tapLocation){
+            
+            // based on the indexPath we can get the specific cell that is being tapped
+            let cell = tableView.cellForRowAtIndexPath(indexPathAtTapLocation) as! SelfieCell
+            
+            //run a method on that cell.
+            cell.tapAnimation()
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()

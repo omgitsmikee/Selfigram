@@ -78,6 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="Naw-Ie-KqH" customClass="SelfieCell" customModule="Selfigram">
                                 <rect key="frame" x="0.0" y="92" width="600" height="320"/>
@@ -124,21 +125,31 @@
                                                 <action selector="likeButtonClicked:" destination="Naw-Ie-KqH" eventType="touchUpInside" id="Kec-nX-p7d"/>
                                             </connections>
                                         </button>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hearts-on" translatesAutoresizingMaskIntoConstraints="NO" id="axy-6H-D82">
+                                            <rect key="frame" x="288.5" y="123" width="23" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="23" id="KGM-fG-aau"/>
+                                                <constraint firstAttribute="height" constant="20" id="N3O-12-YJk"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="0cg-p2-QMl"/>
                                         <constraint firstItem="fMF-wr-5hh" firstAttribute="top" secondItem="Fg1-2L-8ok" secondAttribute="bottom" constant="8" id="61R-UJ-l3o"/>
                                         <constraint firstItem="nfp-lH-ooZ" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="9Rk-xr-KuZ"/>
                                         <constraint firstAttribute="trailing" secondItem="fMF-wr-5hh" secondAttribute="trailing" constant="8" id="9m5-rB-ELt"/>
+                                        <constraint firstItem="axy-6H-D82" firstAttribute="centerX" secondItem="Fg1-2L-8ok" secondAttribute="centerX" id="Aeb-Vg-LPB"/>
                                         <constraint firstItem="Nnr-LH-qUo" firstAttribute="top" secondItem="nfp-lH-ooZ" secondAttribute="bottom" constant="8" id="Es5-XO-0Tb"/>
                                         <constraint firstItem="Fg1-2L-8ok" firstAttribute="top" secondItem="NOv-KA-jtf" secondAttribute="topMargin" id="K4c-Df-wPS"/>
                                         <constraint firstItem="Fg1-2L-8ok" firstAttribute="leading" secondItem="NOv-KA-jtf" secondAttribute="leadingMargin" id="fed-4U-xJz"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Fg1-2L-8ok" secondAttribute="trailing" id="gFo-C0-1hV"/>
+                                        <constraint firstItem="axy-6H-D82" firstAttribute="centerY" secondItem="Fg1-2L-8ok" secondAttribute="centerY" id="hkJ-4x-e5F"/>
                                         <constraint firstItem="nfp-lH-ooZ" firstAttribute="top" secondItem="Fg1-2L-8ok" secondAttribute="bottom" constant="8" id="mMb-ZO-YJK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="Nnr-LH-qUo" id="ALC-cL-9lU"/>
+                                    <outlet property="heartAnimationView" destination="axy-6H-D82" id="DPH-K5-h2b"/>
                                     <outlet property="likeButton" destination="fMF-wr-5hh" id="wX1-D1-dqq"/>
                                     <outlet property="selfieImageView" destination="Fg1-2L-8ok" id="gac-gY-CQp"/>
                                     <outlet property="usernameLabel" destination="nfp-lH-ooZ" id="t3x-PW-DsY"/>
@@ -148,6 +159,7 @@
                         <connections>
                             <outlet property="dataSource" destination="5rq-nw-4Hn" id="Jrd-lH-zUE"/>
                             <outlet property="delegate" destination="5rq-nw-4Hn" id="27h-JD-spS"/>
+                            <outletCollection property="gestureRecognizers" destination="jH8-Rk-LCE" appends="YES" id="z5t-o4-18i"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="bgd-IO-cIu">
@@ -166,6 +178,11 @@
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59Q-Np-dvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="jH8-Rk-LCE">
+                    <connections>
+                        <action selector="doubleTappedSelfie:" destination="5rq-nw-4Hn" id="YFA-S3-1aT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1067" y="-389"/>
         </scene>
@@ -227,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="-566" y="419"/>
         </scene>
-        <!--Activities-->
+        <!--Activities Navigation Controller-->
         <scene sceneID="2my-nD-U9S">
             <objects>
-                <navigationController id="XPh-Ss-9ZF" sceneMemberID="viewController">
+                <navigationController title="Activities Navigation Controller" id="XPh-Ss-9ZF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activities" id="Y4g-He-Jtz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mbg-3x-SSh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -248,7 +265,7 @@
         <!--News Feed-->
         <scene sceneID="jfc-hX-euB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bJZ-Ax-wt9" userLabel="News Feed" sceneMemberID="viewController">
+                <navigationController title="News Feed Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="bJZ-Ax-wt9" userLabel="News Feed" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News Feed" image="NewsFeed" id="Bb4-xY-Bhe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iMe-Qc-CVZ">
@@ -268,7 +285,7 @@
         <!--Activities-->
         <scene sceneID="qbp-3g-Er7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxZ-0U-tb3" userLabel="Activities" sceneMemberID="viewController">
+                <navigationController title="Activities Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="fxZ-0U-tb3" userLabel="Activities" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activities" image="Activities" id="sFF-v8-4kw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="peU-Al-wl9">
