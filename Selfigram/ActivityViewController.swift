@@ -14,6 +14,8 @@ class ActivityViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
 
         // Do any additional setup after loading the view.
     }

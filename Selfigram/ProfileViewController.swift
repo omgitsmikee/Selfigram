@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+
+    
     @IBAction func cameraButtonPressed(sender: AnyObject) {
         // 1: Create an ImagePickerController
         let pickerController = UIImagePickerController()
@@ -74,6 +76,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
+        
         usernameLabel.text = "yourName"
         // Do any additional setup after loading the view.
     }

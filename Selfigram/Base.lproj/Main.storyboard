@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="vLe-dt-aWQ"/>
                     <connections>
                         <outlet property="profileImageView" destination="DXJ-Xo-OFY" id="NxE-vC-lh2"/>
-                        <outlet property="usernameLabel" destination="Q0B-sh-zpe" id="bj7-YP-MuA"/>
+                        <outlet property="usernameLabel" destination="Q0B-sh-zpe" id="Kg0-s5-qTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnZ-ky-T49" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,7 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="Naw-Ie-KqH" customClass="SelfieCell" customModule="Selfigram">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="Naw-Ie-KqH" customClass="SelfieCell" customModule="Selfigram">
                                 <rect key="frame" x="0.0" y="92" width="600" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Naw-Ie-KqH" id="NOv-KA-jtf">

@@ -143,16 +143,16 @@
 		6DCDB2741D6FBA9300738E25 /* Selfigram */ = {
 			isa = PBXGroup;
 			children = (
-				90CC2E7D1D9B33DF0040F099 /* ActivityViewController.swift */,
-				90CC2E7F1D9B340B0040F099 /* ActivityCell.swift */,
-				6D26D9221D7F99080025D8E1 /* FeedViewController.swift */,
-				90D6810E1D822E69006607A8 /* SelfieCell.swift */,
 				6D1C0C691D78FECF0024A67E /* User.swift */,
 				6D1C0C6B1D7900CC0024A67E /* Post.swift */,
 				90533D961D949F3600C2E9F7 /* Activity.swift */,
-				6DCDB2751D6FBA9300738E25 /* AppDelegate.swift */,
 				6DCDB2771D6FBA9300738E25 /* ViewController.swift */,
+				6D26D9221D7F99080025D8E1 /* FeedViewController.swift */,
+				90CC2E7D1D9B33DF0040F099 /* ActivityViewController.swift */,
 				6D94234B1D7650AC00DC039B /* ProfileViewController.swift */,
+				90CC2E7F1D9B340B0040F099 /* ActivityCell.swift */,
+				90D6810E1D822E69006607A8 /* SelfieCell.swift */,
+				6DCDB2751D6FBA9300738E25 /* AppDelegate.swift */,
 				6DCDB2791D6FBA9300738E25 /* Main.storyboard */,
 				6DCDB27C1D6FBA9300738E25 /* Assets.xcassets */,
 				6DCDB27E1D6FBA9300738E25 /* LaunchScreen.storyboard */,

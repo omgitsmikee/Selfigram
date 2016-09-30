@@ -21,12 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Replace XXXX with the App ID and Client ID that Parse gives you
         Post.registerSubclass()
         Activity.registerSubclass()
-        Parse.setApplicationId("0S7t0laoe3TDIYxZgiTZ10JvZYs3YTr6leARYMRl",
-                               clientKey: "MHtYqAJVoMDBrDo89hKTgNnPleJhNtQwv5eCsbxR")
+        
+        // MikesAwesome Parse database keys
+//        Parse.setApplicationId("0S7t0laoe3TDIYxZgiTZ10JvZYs3YTr6leARYMRl",
+//                               clientKey: "MHtYqAJVoMDBrDo89hKTgNnPleJhNtQwv5eCsbxR")
 
+        // Lighthouse common use Parse API keys
+        Parse.setApplicationId("5CDeHX2xNhW11QZXr9AvtBbEQY0lft4jpUuMFt9g",
+                               clientKey: "SO1UFKR9k8RsLx1FsXzBjyI6IjsKxm2K0jcm48dG")
+
+        
+        
         let user = PFUser()
-        let username = "danny"
-        let password = "mathews"
+        let username = "Michael_M"
+        let password = "Mak"
         user.username = username
         user.password = password
         user.signUpInBackgroundWithBlock { (success, error) -> Void in
